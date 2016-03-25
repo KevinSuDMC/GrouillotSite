@@ -1,4 +1,4 @@
-app.controller('ModalInstanceCntrl', function ($scope, $modalInstance, product)
+app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, product)
 {
     $scope.product = product;
 });
@@ -90,7 +90,7 @@ app.controller('GrouCntrl', function($scope, $uibModal, $log){
 
         var modalInstance = $uibModal.open({
           controller: "ModalInstanceCtrl",
-          templateUrl: 'myModalContent.html',
+          templateUrl: 'fuxor.html',
             resolve: {
                 product: function()
                 {
