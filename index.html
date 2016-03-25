@@ -1,0 +1,159 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,900,600,700|Lobster' rel='stylesheet' type='text/css'>    
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+
+        <link rel="stylesheet" href="css/main.css">
+
+      
+    </head>
+
+    <body ng-app="Grou">
+
+        <div class="header">
+
+            <div class="left-head">
+            </div>
+    
+            <div class="nav-bar">
+                <div class="container">
+                    <div class="icon-box">
+                        <button id="aboutbut" class="clear">A PROPOS</button>
+                        <i class="material-icons md-25" id="home">info</i>
+                    </div>
+
+                    <div class="icon-box">
+                        <button id="homebut" class="clear">ACCEUIL</button>
+                        <i class="material-icons md-25" id="home">home</i>
+                    </div>
+
+                    <div class="icon-box">
+                        <button id="packbut" class="clear">PACK</button>
+                        <i class="material-icons md-25" id="home">card_giftcard</i>
+
+                    </div>
+
+                    <div class="icon-box">
+                        <button id="donbut" class="clear">DONATION</button>
+                        <i class="material-icons md-25" id="home">favorite</i>
+                    </div>
+                </div>    
+            </div>
+
+            <div class="right-head">
+            </div>
+
+        </div>
+        
+        <div class="header2">  
+            <div class="leftspace">
+                <div class="leftcontainer">
+
+                    <div class="filtericon">
+                        <img src="img/icons/filter.png" class="filter1" />
+                        <img src="img/icons/filterhover.png" class="filter1" />
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="rightspace">
+            </div>
+        </div>
+
+        <div class="spacer">
+        </div>
+
+        <div class="bottomContainer" ng-controller="GrouCntrl">
+            <div>
+                <div class="left-bar" >
+                    <div class="leftcontainer">
+                        <br>
+                        <br>
+                        <input id="search-input" name="search" type="text" placeholder="chercher" ng-model="query">
+                        <br>
+                        <h4>Position</H4>
+                        <input type="checkbox" ng-click="includesKeywords('standing')"/> standing</br/>
+                        <input type="checkbox" ng-click="includesKeywords('sitting')"/> sitting</br/>
+                        <input type="checkbox" ng-click="includesKeywords('walking')"/> walking</br/>
+                        <input type="checkbox" ng-click="includesKeywords('lying down')"/> lying down</br/>
+
+
+                        <br>
+                        <h4>Another sub-header</h4>
+                        <input type="checkbox" ng-click="includesKeywords('man')"/> man</br/>
+                        <input type="checkbox" ng-click="includesKeywords('woman')"/> woman</br/>
+                        <br>
+                        <h4>Another sub-header</h4>
+                        <input type="checkbox" ng-click="includesKeywords('america')"/> america</br/>
+                        <input type="checkbox" ng-click="includesKeywords('europe')"/> europe</br/>
+                    </div>
+                </div>    
+
+                <div class="right-bar">
+                    <div class="main" >
+
+                        <div class="container">
+                            <h1> {{ title }} </h1>
+                            <h2> {{ promo }} </h2>
+                        </div>
+                    
+                        <div class="productBox">
+                            <div>
+                                <div class="container">
+                                </div>
+                                <div>
+                                    <div ng-repeat="product in products  | filter:keywordsFilter| filter:query" class="thumbnail-container" ng-click="open(products)" >
+
+                                        <p id="label"> {{product.name}} </p>
+
+                                        <div>
+                                          <img ng-src="{{product.image}}" class="thumbnails">
+                                        </div>
+
+                                            <!--MODAL WINDOW--> 
+                                          <!--  <script type="text/ng-template" id="myModalContent.html">
+                                                <div class="modal-header">
+                                                    <h3>The Customer Name is: {{ products.name }}</h3>
+                                                </div>
+                                                <div class="modal-body">
+                                                        This is where the Customer Details Goes<br />
+                                                        {{ products.keywords }}
+                                                </div>
+                                                <div class="modal-footer">
+
+                                                </div>
+                                            </script> -->
+
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+
+                    </div>
+                </div>
+        </div>
+    </div>
+
+
+
+    <!-- Controllers -->
+        <script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+
+        <script src="js/app.js"></script>
+        <script src="js/controllers/MainController.js"></script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+    </body>
+</html>
