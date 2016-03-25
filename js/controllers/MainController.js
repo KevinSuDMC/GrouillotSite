@@ -3,7 +3,7 @@ app.controller('ModalInstanceCntrl', function ($scope, $modalInstance, product)
     $scope.product = product;
 });
 
-app.controller('GrouCntrl', function($scope, $modal, $log){
+app.controller('GrouCntrl', function($scope, $uibModal, $log){
 
   $scope.title = 'download this awesome stuff!';
   $scope.promo = 'this is the description text';
@@ -88,7 +88,7 @@ app.controller('GrouCntrl', function($scope, $modal, $log){
      // MODAL WINDOW
     $scope.open = function (_product) {
 
-        var modalInstance = $modal.open({
+        var modalInstance = $uibModal.open({
           controller: "ModalInstanceCtrl",
           templateUrl: 'myModalContent.html',
             resolve: {
