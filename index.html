@@ -11,6 +11,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet">
 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link rel="stylesheet" href="css/main.css">
 
       
@@ -111,27 +112,27 @@
                                 <div class="container">
                                 </div>
                                 <div>
-                                    <div ng-repeat="product in products  | filter:keywordsFilter| filter:query" class="thumbnail-container" ng-click="open(products)" >
+                                    <div ng-repeat="product in products  | filter:keywordsFilter| filter:query" class="thumbnail-container">
 
                                         <p id="label"> {{product.name}} </p>
 
                                         <div>
-                                          <img ng-src="{{product.image}}" class="thumbnails">
+                                         <img ng-src="{{product.image}}" ng-click="open(product)" class="thumbnails" >
                                         </div>
 
                                             <!--MODAL WINDOW--> 
-                                          <!--  <script type="text/ng-template" id="myModalContent.html">
+                                            <script type="text/ng-template" id="myModalContent.html">
                                                 <div class="modal-header">
-                                                    <h3>The Customer Name is: {{ products.name }}</h3>
+                                                    <h3>The item is: {{ product.name }}</h3>
                                                 </div>
                                                 <div class="modal-body">
-                                                        This is where the Customer Details Goes<br />
-                                                        {{ products.keywords }}
+                                                        Keywords:<br />
+                                                        {{ product.keywords }}
                                                 </div>
                                                 <div class="modal-footer">
 
                                                 </div>
-                                            </script> -->
+                                            </script>
 
                                     </div>
                                 </div>
@@ -149,6 +150,7 @@
         <script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 
+        <script src="js/vendor/ui-bootstrap-tpls-1.2.5.min.js"></script>
         <script src="js/app.js"></script>
         <script src="js/controllers/MainController.js"></script>
 

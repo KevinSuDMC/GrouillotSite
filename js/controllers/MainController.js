@@ -1,4 +1,9 @@
-app.controller('GrouCntrl',function($scope){
+app.controller('ModalInstanceCntrl', function ($scope, $modalInstance, product)
+{
+    $scope.product = product;
+});
+
+app.controller('GrouCntrl', function($scope, $modal, $log){
 
   $scope.title = 'download this awesome stuff!';
   $scope.promo = 'this is the description text';
@@ -81,20 +86,20 @@ app.controller('GrouCntrl',function($scope){
     }
     
      // MODAL WINDOW
-   /* $scope.open = function (products) {
+    $scope.open = function (_product) {
 
         var modalInstance = $modal.open({
           controller: "ModalInstanceCtrl",
           templateUrl: 'myModalContent.html',
             resolve: {
-                customer: function()
+                product: function()
                 {
-                    return products;
+                    return _product;
                 }
             }
              });
 
-    }; */
+    }; 
 
 });
 
