@@ -1,6 +1,12 @@
 app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, product)
 {
     $scope.product = product;
+
+      //array to string
+    $scope.arrayToString = function(string){
+        return string.join(", ");
+    };
+
 });
 
 app.controller('GrouCntrl', function($scope, $uibModal, $log){
@@ -17,31 +23,31 @@ app.controller('GrouCntrl', function($scope, $uibModal, $log){
   	},
 
     { 
-     name: 'Francois ',
+     name: 'Francois',
      keywords: ['man', 'sitting', 'europe'],
      image: 'img/thumbnails/Bill.png'
     },
     
     { 
-     name: 'jack ',
+     name: 'jack',
      keywords: ['sitting'],
      image: 'img/thumbnails/Bill.png'
     },
 
     {
-     name: 'jack ',
+     name: 'jack',
      keywords: ['walking', 'woman'],
      image: 'img/thumbnails/Bill.png'
     },
 
     {
-     name: 'jack ',
+     name: 'jack',
      keywords: ['lying down','europe'],
      image: 'img/thumbnails/Bill.png'
     },
 
     {
-       name: 'jack ',
+       name: 'jack',
      keywords: ['sitting', 'america'],
      image: 'img/thumbnails/Bill.png'
     },
@@ -49,7 +55,7 @@ app.controller('GrouCntrl', function($scope, $uibModal, $log){
 
     $scope.keywordsIncludes = [];
 
-
+    //include keywords from checkbox
     $scope.includesKeywords = function(keywords) {
         var i = $.inArray(keywords, $scope.keywordsIncludes);
         if (i > -1) {
@@ -60,6 +66,7 @@ app.controller('GrouCntrl', function($scope, $uibModal, $log){
         }
     }
     
+    //filter keywords 
     $scope.keywordsFilter = function(products) {
         if ($scope.keywordsIncludes.length > 0) {            
                 var arrayLength = $.inArray(products.keywords).length;
@@ -75,6 +82,7 @@ app.controller('GrouCntrl', function($scope, $uibModal, $log){
 
     }
 
+    //search keywords
     $scope.query = "";
 
     $scope.search = function(products) {
@@ -90,7 +98,7 @@ app.controller('GrouCntrl', function($scope, $uibModal, $log){
 
         var modalInstance = $uibModal.open({
           controller: "ModalInstanceCtrl",
-          templateUrl: 'fuxor.html',
+          templateUrl: 'modalWindow.html',
             resolve: {
                 product: function()
                 {
@@ -98,8 +106,10 @@ app.controller('GrouCntrl', function($scope, $uibModal, $log){
                 }
             }
              });
-
     }; 
+
+  
+
 
 });
 

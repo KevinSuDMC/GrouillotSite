@@ -98,6 +98,7 @@ textarea {
    ========================================================================== */
 
 body{
+  width: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Raleway', sans-serif;
@@ -187,6 +188,7 @@ text-align: left;
   top: 100px;
   width: 100%;
   height: 70px;
+  min-width: 800px;
   position: fixed;
   background-color: #d4d4d4;
   vertical-align: middle;
@@ -223,6 +225,13 @@ button:hover{
 
 .container{
   padding: 20px;
+  width: 70%;
+}
+
+.text-space1{
+  padding-top: 35px;
+  padding-left: 14px;
+  padding-bottom: 20px;
 }
 
 .leftcontainer{
@@ -300,8 +309,8 @@ button:hover{
 }
 
 .thumbnail-container:hover{
-  height: 180px;
-  width: 180px;
+  height: 160px;
+  width: 160px;
   display: inline-block;
   border: none;
   margin: 15px;
@@ -409,12 +418,14 @@ button:hover{
 .leftspace{
   width: 30%;
   height: 40px;
+  min-width: 240px;
   float: left;
   display: inline-block;
 }
 
 .rightspace{
   width: 70%;
+  min-width: 560px;
   height: 40px;
   display: inline-block;
 
@@ -438,6 +449,10 @@ button:hover{
 
 .filtericon:hover img:last-child{
   display:inline-block
+}
+
+#search-input{
+  margin-bottom: 20px;
 }
 
 
